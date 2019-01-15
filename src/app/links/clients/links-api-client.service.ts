@@ -3,10 +3,22 @@ import { LinkListItemModel } from '../models/link-list-item.model';
 import { LinkDetailsModel } from '../models/link-details.model';
 import { Observable, of } from 'rxjs';
 
+
 const dummyList: LinkListItemModel[] = [
-  { id: 1, title: 'This is how you can double your salary in a week!', url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', rating: -1 },
-  // tslint:disable-next-line:max-line-length
-  { id: 2, title: 'Happiness', url: 'https://www.reddit.com/r/AnimalsBeingDerps/comments/afquuu/happiest_baby_goat_in_the_world/', rating: +1 }
+  {
+    id: 1,
+    title: 'This is how you can double your salary in a week!',
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    likes: 1,
+    dislikes: 9
+  },
+  {
+    id: 2,
+    title: 'This is what happiness looks like',
+    url: 'https://www.reddit.com/r/AnimalsBeingDerps/comments/afquuu/happiest_baby_goat_in_the_world/',
+    likes: 150,
+    dislikes: 30
+  }
 ];
 
 // tslint:disable-next-line:max-line-length
@@ -17,6 +29,7 @@ const dummyDetailList: LinkDetailsModel[] =
     ...listItem,
     description: loremIpsum.substr(0, (1 + Math.random()) * loremIpsum.length / 2 + 1)
   }));
+
 
 @Injectable({
   providedIn: 'root'

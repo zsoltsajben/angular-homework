@@ -1,0 +1,15 @@
+<div class="container">
+
+  <button class="like" type="button" (click)="onLikeClick()">
+    <i class="fa fa-thumbs-up"></i>
+  </button>
+  <span>{{ likeRatio | number: '1.0-0' }}%</span>
+  <button class="dislike" type="button" (click)="onDislikeClick()">
+    <i class="fa fa-thumbs-down"></i>
+  </button>
+  
+  <div class="like-ratio-bar">
+    <div class="like-bar" [style.width.%]="likeRatio"></div>
+  </div>
+
+</div>

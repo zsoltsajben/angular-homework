@@ -6,8 +6,8 @@
       <th>Id</th>
       <th>Title</th>
       <th>Url</th>
-      <th>Rating</th>
-      <th></th>
+      <th>Like ratio</th>
+      <th>Details</th>
     </tr>
   </thead>
   <tbody>
@@ -15,7 +15,7 @@
       <td>{{ link.id }}</td>
       <td>{{ link.title }}</td>
       <td><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></td>
-      <td>{{ link.rating }}</td>
+      <td><app-likes [likes]="link.likes" [dislikes]="link.dislikes"></app-likes></td>
       <td><a [routerLink]="['/links', link.id]">Details</a></td>
     </tr>
   </tbody>
@@ -23,5 +23,5 @@
 
 
 <p>
-  <a routerLink="/">back to home-page</a>
+  <a routerLink="/">Back to home-page</a>
 </p>

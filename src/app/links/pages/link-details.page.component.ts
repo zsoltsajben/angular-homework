@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { LinksApiClientService } from '../clients/links-api-client.service';
 
 @Component({
-  selector: 'app-link-details.page',
   templateUrl: './link-details.page.component.html',
   styleUrls: ['./link-details.page.component.scss']
 })

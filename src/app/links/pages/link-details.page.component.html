@@ -4,10 +4,10 @@
   <li><strong>Id:</strong> {{ link.id }}</li>
   <li><strong>Title:</strong> {{ link.title }}</li>
   <li><strong>Url:</strong> {{ link.url }}</li>
-  <li><strong>Rating:</strong> {{ link.rating }}</li>
+  <li><strong>Like ratio:</strong> <app-likes [likes]="link.likes" [dislikes]="link.dislikes"></app-likes></li>
   <li><strong>Description:</strong> {{ link.description }}</li>
 </ul>
 
 <p>
-  <a routerLink="/links">back to list</a>
+  <a routerLink="/links">Back to list</a>
 </p>
