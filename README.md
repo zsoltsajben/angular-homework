@@ -1,6 +1,11 @@
 # AngularHomework
 
-This is a simple link sharing site which was created as a homework for an Angular 2+ course. There is a link list where you can browse and like/dislike the added links. You can also view the details page for any of the links.
+This is a simple link sharing site which was created as a homework for an Angular 2+ course.
+
+Features:
+
+* Browse a list fo the added links and like/dislike them.
+* View the details for any of the links.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
