@@ -4,5 +4,6 @@ export interface LinkDetailsModel {
     url: string;
     likes: number;
     dislikes: number;
+    isTrending: boolean;
     description: string;
 }

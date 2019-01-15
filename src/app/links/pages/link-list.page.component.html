@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Id</th>
+      <th>Trending</th>
       <th>Title</th>
       <th>Url</th>
       <th>Like ratio</th>
@@ -13,6 +14,7 @@
   <tbody>
     <tr *ngFor="let link of links">
       <td>{{ link.id }}</td>
+      <td><i class="{{ link.isTrending | trendingBooleanToFaicon }}"></i></td>
       <td><strong>{{ link.title }}</strong></td>
       <td><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></td>
       <td><app-likes [likes]="link.likes" [dislikes]="link.dislikes"></app-likes></td>

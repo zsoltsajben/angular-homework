@@ -10,14 +10,16 @@ const dummyList: LinkListItemModel[] = [
     title: 'You can double your salary in a week (secret method)',
     url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     likes: 5,
-    dislikes: 95
+    dislikes: 95,
+    isTrending: false
   },
   {
     id: 2,
     title: 'So this is how deers play (funny)',
     url: 'https://www.reddit.com/r/gifs/comments/a9kvxx/is_this_how_you_play/',
     likes: 150,
-    dislikes: 40
+    dislikes: 40,
+    isTrending: true
   }
 ];
 
