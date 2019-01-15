@@ -7,17 +7,17 @@ import { Observable, of } from 'rxjs';
 const dummyList: LinkListItemModel[] = [
   {
     id: 1,
-    title: 'This is how you can double your salary in a week!',
+    title: 'You can double your salary in a week (secret method)',
     url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    likes: 1,
-    dislikes: 9
+    likes: 5,
+    dislikes: 95
   },
   {
     id: 2,
-    title: 'This is what happiness looks like',
-    url: 'https://www.reddit.com/r/AnimalsBeingDerps/comments/afquuu/happiest_baby_goat_in_the_world/',
+    title: 'So this is how deers play (funny)',
+    url: 'https://www.reddit.com/r/gifs/comments/a9kvxx/is_this_how_you_play/',
     likes: 150,
-    dislikes: 30
+    dislikes: 40
   }
 ];
 
@@ -31,9 +31,7 @@ const dummyDetailList: LinkDetailsModel[] =
   }));
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class LinksApiClientService {
 
   constructor() { }

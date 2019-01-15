@@ -13,7 +13,7 @@
   <tbody>
     <tr *ngFor="let link of links">
       <td>{{ link.id }}</td>
-      <td>{{ link.title }}</td>
+      <td><strong>{{ link.title }}</strong></td>
       <td><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></td>
       <td><app-likes [likes]="link.likes" [dislikes]="link.dislikes"></app-likes></td>
       <td><a [routerLink]="['/links', link.id]">Details</a></td>

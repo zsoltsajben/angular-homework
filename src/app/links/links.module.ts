@@ -5,13 +5,20 @@ import { LinksRoutingModule } from './links-routing.module';
 import { LinkDetailsPageComponent } from './pages/link-details.page.component';
 import { LinkListPageComponent } from './pages/link-list.page.component';
 import { SharedModule } from '../shared/shared.module';
+import { LinksApiClientService } from './clients/links-api-client.service';
 
 @NgModule({
-  declarations: [LinkDetailsPageComponent, LinkListPageComponent],
+  declarations: [
+    LinkDetailsPageComponent,
+    LinkListPageComponent
+  ],
   imports: [
     CommonModule,
     LinksRoutingModule,
     SharedModule
+  ],
+  providers: [
+    LinksApiClientService
   ]
 })
 export class LinksModule { }
