@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { CoreModule } from './core/core.module';
+import { LayoutComponent } from './core/components/layout/layout.component';
 // import { LinksModule } from './links/links.module';
 
 const routes: Routes = [
-  { path: '', loadChildren: () => CoreModule },
-  { path: 'links', loadChildren: './links/links.module#LinksModule' }
+  {
+    path: '',
+    component: LayoutComponent,
+    loadChildren: () => CoreModule
+  },
+  {
+    path: 'links',
+    component: LayoutComponent,
+    loadChildren: './links/links.module#LinksModule'
+  }
 ];
 
 @NgModule({
