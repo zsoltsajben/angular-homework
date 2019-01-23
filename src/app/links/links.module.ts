@@ -6,6 +6,7 @@ import { LinkDetailsPageComponent } from './pages/link-details.page.component';
 import { LinkListPageComponent } from './pages/link-list.page.component';
 import { SharedModule } from '../shared/shared.module';
 import { LinksApiClientService } from './clients/links-api-client.service';
+import { AuthGuard } from '../core/guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LinksApiClientService } from './clients/links-api-client.service';
     SharedModule
   ],
   providers: [
-    LinksApiClientService
+    LinksApiClientService,
+    AuthGuard
   ]
 })
 export class LinksModule { }
