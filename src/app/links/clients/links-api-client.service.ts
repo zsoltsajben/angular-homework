@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
 import { LinkListItemModel } from '../models/link-list-item.model';
 import { LinkDetailsModel } from '../models/link-details.model';
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 
+const filterFunction = (filter: string) => {
+  return (x: LinkListItemModel): boolean => {
+    return (filter && x.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
+  };
+};
 
 const dummyList: LinkListItemModel[] = [
   {
@@ -38,8 +43,12 @@ export class LinksApiClientService {
 
   constructor() { }
 
-  getLinks(): Observable<LinkListItemModel[]> {
-    return of(dummyList);
+  getLinks(filter: string): Observable<LinkListItemModel[]> {
+    // return throwError('vmi hiba');
+    const observableList = filter
+      ? of(dummyList.filter(filterFunction(filter)))
+      : of(dummyList);
+    return observableList;
   }
 
   getLinkDetails(id: number): Observable<LinkDetailsModel> {

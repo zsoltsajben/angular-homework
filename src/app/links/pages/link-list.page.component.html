@@ -10,6 +10,13 @@
       <th>Like ratio</th>
       <th>Details</th>
     </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>
+        <input type="text" [(ngModel)]="filter" (input)="inputHandler$.next($event.target.value)" />
+      </th>
+    </tr>
   </thead>
   <tbody>
     <tr *ngFor="let link of links">
