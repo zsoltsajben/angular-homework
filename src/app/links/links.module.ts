@@ -7,6 +7,8 @@ import { LinkListPageComponent } from './pages/link-list.page.component';
 import { SharedModule } from '../shared/shared.module';
 import { LinksApiClientService } from './clients/links-api-client.service';
 import { AuthGuard } from '../core/guards/auth.guard';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FakeBackendInterceptor } from './interceptors/fake-backend.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { AuthGuard } from '../core/guards/auth.guard';
   ],
   providers: [
     LinksApiClientService,
-    AuthGuard
+    AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true }
   ]
 })
 export class LinksModule { }

@@ -1,12 +1,16 @@
 <h3>Link details</h3>
 
-<ul>
+<ul *ngIf="link; else loading">
   <li><strong>Id:</strong> {{ link.id }}</li>
   <li><strong>Title:</strong> {{ link.title }}</li>
   <li><strong>Url:</strong> {{ link.url }}</li>
   <li><strong>Like ratio:</strong> <app-likes [likes]="link.likes" [dislikes]="link.dislikes"></app-likes></li>
   <li><strong>Description:</strong> {{ link.description }}</li>
 </ul>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>
 
 <p>
   <a routerLink="/links">Back to list</a>
