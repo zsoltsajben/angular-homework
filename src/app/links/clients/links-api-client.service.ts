@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { LinkListItemModel } from '../models/link-list-item.model';
 import { LinkDetailsModel } from '../models/link-details.model';
 import { Observable, of, throwError } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 const filterFunction = (filter: string) => {
   return (x: LinkListItemModel): boolean => {
@@ -48,7 +49,8 @@ export class LinksApiClientService {
     const observableList = filter
       ? of(dummyList.filter(filterFunction(filter)))
       : of(dummyList);
-    return observableList;
+    return observableList
+      .pipe(delay(500));
   }
 
   getLinkDetails(id: number): Observable<LinkDetailsModel> {

@@ -1,6 +1,9 @@
 <h3>Link list</h3>
 
 <table>
+  <div *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+  </div>
   <thead>
     <tr>
       <th>Id</th>
@@ -24,7 +27,9 @@
       <td><i class="{{ link.isTrending | trendingBooleanToFaicon }}"></i></td>
       <td><strong>{{ link.title }}</strong></td>
       <td><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></td>
-      <td><app-likes [likes]="link.likes" [dislikes]="link.dislikes"></app-likes></td>
+      <td>
+        <app-likes [likes]="link.likes" [dislikes]="link.dislikes"></app-likes>
+      </td>
       <td><a [routerLink]="['/links', link.id]">Details</a></td>
     </tr>
   </tbody>
