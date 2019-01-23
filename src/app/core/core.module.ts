@@ -6,6 +6,7 @@ import { HomePageComponent } from './pages/home-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { LoginComponent } from './components/login/login.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -15,7 +16,8 @@ import { MatDialogModule } from '@angular/material/dialog';
   declarations: [
     HomePageComponent,
     LayoutComponent,
-    MenuComponent
+    MenuComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSidenavModule,
     MatListModule,
     MatDialogModule
+  ],
+  entryComponents: [
+    LoginComponent
   ]
 })
 export class CoreModule { }

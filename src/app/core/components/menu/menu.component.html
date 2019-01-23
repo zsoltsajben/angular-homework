@@ -2,16 +2,18 @@
 <mat-divider></mat-divider>
 
 <mat-action-list>
-  <div>
-    <h4 mat-subheader>User</h4>
-    <button mat-list-item> Profile </button>
-    <button mat-list-item> Logout </button>
+  <ng-container *ngIf="isLoggedIn$ | async; else loggedOutTemplate">
+    <h4 mat-subheader>User: {{ (currentUser$ | async)?.username }}</h4>
+    <button mat-list-item>Profile</button>
+    <button mat-list-item (click)="logout()">Logout</button>
     <mat-divider></mat-divider>
-  </div>
+  </ng-container>
 
-  <div>
-    <h4 mat-subheader>Pages</h4>
-    <button mat-list-item routerLink="/">Home page</button>
-    <button mat-list-item routerLink="/links">Links</button>
-  </div>
+  <ng-template #loggedOutTemplate>
+    <button mat-list-item (click)="openLogin()">Login</button>
+  </ng-template>
+
+  <h4 mat-subheader>Pages</h4>
+  <button mat-list-item routerLink="/">Home page</button>
+  <button mat-list-item routerLink="/links">Links</button>
 </mat-action-list>
