@@ -4,6 +4,7 @@ import { IUser } from '../models/iuser.model';
 
 const USERS_KEY = 'users';
 const CURRENT_USER_NAME_KEY = 'currentUsername';
+const AUTH_TOKEN_KEY = 'authToken';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class AuthService {
 
   get CurrentUser$(): Observable<IUser> {
     return this.currentUser.asObservable();
+  }
+
+  getAuthToken(): string {
+    return localStorage.getItem(AUTH_TOKEN_KEY);
   }
 
   login(username: string, password: string): boolean {
@@ -51,12 +56,26 @@ export class AuthService {
     this.isLoggedIn.next(false);
     this.currentUser.next(null);
     localStorage.removeItem(CURRENT_USER_NAME_KEY);
+    localStorage.removeItem(AUTH_TOKEN_KEY);
   }
 
   private logUserIn(username: string) {
     this.isLoggedIn.next(true);
     this.currentUser.next({ username: username });
     localStorage.setItem(CURRENT_USER_NAME_KEY, username);
+    localStorage.setItem(AUTH_TOKEN_KEY, this.generateAuthToken(username));
+  }
+
+  private generateAuthToken(username: string): string {
+    let random = '';
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const length = 20;
+
+    for (let i = 0; i < length; i++) {
+      random += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+
+    return `${username}-auth-token-${random}`;
   }
 
   private getStoredUsers(): User[] {
