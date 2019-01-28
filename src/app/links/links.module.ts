@@ -10,7 +10,6 @@ import { LinksApiClientService } from './clients/links-api-client.service';
 import { AuthGuard } from '../core/guards/auth.guard';
 
 import { FakeBackendInterceptor } from './interceptors/fake-backend.interceptor';
-import { AuthTokenHeaderAppenderInterceptor } from './interceptors/auth-token-header-appender.interceptor';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { AuthTokenHeaderAppenderInterceptor } from './interceptors/auth-token-he
   providers: [
     LinksApiClientService,
     AuthGuard,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthTokenHeaderAppenderInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true }
   ]
 })

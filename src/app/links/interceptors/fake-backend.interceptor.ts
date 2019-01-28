@@ -46,13 +46,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     return of(null)
       .pipe(
         mergeMap(() => {
-
-          // print the headers from the AuthTokenHeaderAppenderInterceptor
-          console.log('Headers:');
-          request.headers.keys().forEach(function (key: string): void {
-            console.log(`- ${key}: ${request.headers.get(key)}`);
-          });
-
+          
           if (request.url.match(/\/links\/\d+$/) && request.method === 'GET') {
             const urlParts = request.url.split('/');
             const id = parseInt(urlParts[urlParts.length - 1], 10);
