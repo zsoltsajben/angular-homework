@@ -19,8 +19,9 @@ export class HeaderLoggerInterceptor implements HttpInterceptor {
       .pipe(
         mergeMap(() => {
 
+          console.log('HeaderLoggerInterceptor called');
+
           // print the headers from the AuthTokenHeaderAppenderInterceptor
-          console.log('Hello world! ');
           console.log('Headers:');
           request.headers.keys().forEach(function (key: string): void {
             console.log(`- ${key}: ${request.headers.get(key)}`);

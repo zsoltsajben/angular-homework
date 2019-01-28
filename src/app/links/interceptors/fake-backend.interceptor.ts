@@ -46,7 +46,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     return of(null)
       .pipe(
         mergeMap(() => {
-          
+
+          console.log('FakeBackendInterceptor called');
+
           if (request.url.match(/\/links\/\d+$/) && request.method === 'GET') {
             const urlParts = request.url.split('/');
             const id = parseInt(urlParts[urlParts.length - 1], 10);
@@ -60,7 +62,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             } else {
               return throwError({
                 error: {
-                  message: 'Not found asdadsasd'
+                  message: 'Not found'
                 }
               });
             }

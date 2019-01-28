@@ -22,6 +22,8 @@ export class AuthTokenHeaderAppenderInterceptor implements HttpInterceptor {
       .pipe(
         mergeMap(() => {
 
+          console.log('AuthTokenHeaderAppenderInterceptor called');
+
           // return throwError({ error: { message: 'Not found' } });
 
           const authToken = this.authService.getAuthToken();

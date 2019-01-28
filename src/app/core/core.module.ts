@@ -11,6 +11,14 @@ import { LoginComponent } from './components/login/login.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material';
+
+const materialModules = [
+  MatSidenavModule,
+  MatListModule,
+  MatDialogModule,
+  MatDividerModule,
+];
 
 @NgModule({
   declarations: [
@@ -23,9 +31,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     CommonModule,
     CoreRoutingModule,
     SharedModule,
-    MatSidenavModule,
-    MatListModule,
-    MatDialogModule
+    ...materialModules
+  ],
+  exports: [
+    ...materialModules
   ],
   entryComponents: [
     LoginComponent
