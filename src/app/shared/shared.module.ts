@@ -9,11 +9,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
+import { NotEqualsValidatorDirective } from './validators/not-equals.validator';
 
 @NgModule({
   declarations: [
     LikesComponent,
-    TrendingBooleanToFaiconPipe
+    TrendingBooleanToFaiconPipe,
+    NotEqualsValidatorDirective
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    NotEqualsValidatorDirective
   ]
 })
 export class SharedModule { }

@@ -1,5 +1,6 @@
 <h3>Link list</h3>
 
+<a mat-raised-button [routerLink]="['/links', 'create']">Create a link</a>
 <table>
   <div *ngIf="isLoading">
     <mat-spinner></mat-spinner>
@@ -30,7 +31,8 @@
       <td>
         <app-likes [likes]="link.likes" [dislikes]="link.dislikes"></app-likes>
       </td>
-      <td><a [routerLink]="['/links', link.id]">Details</a></td>
+      <td><a [routerLink]="['/links', link.id]" mat-raised-button>Details</a></td>
+      <td><a [routerLink]="['/links', link.id, 'edit']" mat-raised-button>Edit</a></td>
     </tr>
   </tbody>
 </table>

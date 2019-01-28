@@ -11,11 +11,17 @@ import { AuthGuard } from '../core/guards/auth.guard';
 
 import { FakeBackendInterceptor } from './interceptors/fake-backend.interceptor';
 import { AuthTokenHeaderAppenderInterceptor } from './interceptors/auth-token-header-appender.interceptor';
+import { LinkEditPageComponent } from './pages/link-edit.page.component';
+import { LinkCreatePageComponent } from './pages/link-create.page.component';
+import { LinkFormComponent } from './components/link-form.component';
 
 @NgModule({
   declarations: [
     LinkDetailsPageComponent,
-    LinkListPageComponent
+    LinkListPageComponent,
+    LinkEditPageComponent,
+    LinkCreatePageComponent,
+    LinkFormComponent
   ],
   imports: [
     CommonModule,
