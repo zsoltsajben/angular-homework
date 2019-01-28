@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse } from '@angular/common/http';
-import { LinkListItemModel } from '../models/link-list-item.model';
-import { LinkDetailsModel } from '../models/link-details.model';
+import { LinkListItemModel } from '../../links/models/link-list-item.model';
+import { LinkDetailsModel } from '../../links/models/link-details.model';
 import { Observable, of, throwError } from 'rxjs';
 import { mergeMap, materialize, dematerialize, delay } from 'rxjs/operators';
 

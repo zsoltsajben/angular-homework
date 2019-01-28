@@ -3,7 +3,7 @@ import { LinkListItemModel } from '../models/link-list-item.model';
 import { LinkDetailsModel } from '../models/link-details.model';
 import { Observable, of, throwError } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { dummyList, dummyDetailList } from '../interceptors/fake-backend.interceptor';
+import { dummyList, dummyDetailList } from '../../core/interceptors/fake-backend.interceptor';
 import { HttpClient } from '@angular/common/http';
 
 const filterFunction = (filter: string) => {

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { LinksRoutingModule } from './links-routing.module';
 import { LinkDetailsPageComponent } from './pages/link-details.page.component';
@@ -8,8 +7,6 @@ import { LinkListPageComponent } from './pages/link-list.page.component';
 import { SharedModule } from '../shared/shared.module';
 import { LinksApiClientService } from './clients/links-api-client.service';
 import { AuthGuard } from '../core/guards/auth.guard';
-
-import { FakeBackendInterceptor } from './interceptors/fake-backend.interceptor';
 
 @NgModule({
   declarations: [
@@ -23,8 +20,7 @@ import { FakeBackendInterceptor } from './interceptors/fake-backend.interceptor'
   ],
   providers: [
     LinksApiClientService,
-    AuthGuard,
-    { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true }
+    AuthGuard
   ]
 })
 export class LinksModule { }
