@@ -11,13 +11,17 @@ import { LoginComponent } from './components/login/login.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AnimationPageComponent } from './pages/animation.page.component';
+import { ChangedetectionPageComponent } from './pages/changedetection.page.component';
 
 @NgModule({
   declarations: [
     HomePageComponent,
     LayoutComponent,
     MenuComponent,
-    LoginComponent
+    LoginComponent,
+    AnimationPageComponent,
+    ChangedetectionPageComponent
   ],
   imports: [
     CommonModule,
