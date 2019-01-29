@@ -1,6 +1,6 @@
 <h3>Link details</h3>
 
-<ul *ngIf="link; else loading">
+<ul *ngIf="link; else loading" @weirdFadeIn>
   <li><strong>Id:</strong> {{ link.id }}</li>
   <li><strong>Title:</strong> {{ link.title }}</li>
   <li><strong>Url:</strong> {{ link.url }}</li>
