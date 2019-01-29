@@ -1,5 +1,7 @@
 <h3>Link details</h3>
 
+<pre>{{ link | json }}</pre>
+
 <ul *ngIf="link; else loading" @weirdFadeIn>
   <li><strong>Id:</strong> {{ link.id }}</li>
   <li><strong>Title:</strong> {{ link.title }}</li>
