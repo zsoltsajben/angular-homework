@@ -13,6 +13,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AnimationPageComponent } from './pages/animation.page.component';
 import { ChangedetectionPageComponent } from './pages/changedetection.page.component';
+import { CdDemoComponent } from './components/cd-demo/cd-demo.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ChangedetectionPageComponent } from './pages/changedetection.page.compo
     MenuComponent,
     LoginComponent,
     AnimationPageComponent,
-    ChangedetectionPageComponent
+    ChangedetectionPageComponent,
+    CdDemoComponent
   ],
   imports: [
     CommonModule,

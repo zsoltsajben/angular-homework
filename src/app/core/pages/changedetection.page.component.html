@@ -1,3 +1,6 @@
-<p>
-  changedetection.page works!
-</p>
+<h3>Change detection page</h3>
+
+<app-cd-demo [model]="demoModel"></app-cd-demo>
+<pre>{{ demoModel | json }}</pre>
+<button (click)="changeModel()">change model</button>
+<button (click)="changeAlma()">change alma</button>

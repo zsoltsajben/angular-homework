@@ -6,7 +6,7 @@ import { AnimationPageComponent } from './pages/animation.page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'changedetaction', component: ChangedetectionPageComponent },
+  { path: 'changedetection', component: ChangedetectionPageComponent },
   { path: 'animation', component: AnimationPageComponent }
 ];
 
