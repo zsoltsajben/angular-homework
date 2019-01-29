@@ -1,3 +1,32 @@
 <h4>Link form component</h4>
 
-<!-- TODO -->
+<form [formGroup]="linkForm">
+  <mat-form-field>
+    <input matInput placeholder="Title" formControlName="title">
+    <mat-error *ngIf="(linkForm.get('title').dirty || linkForm.get('title').touched) && linkForm.get('title').hasError('required')">
+      Title is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Url" formControlName="url">
+    <mat-error *ngIf="(linkForm.get('url').dirty || linkForm.get('url').touched) && linkForm.get('url').hasError('required')">
+      Url is required
+    </mat-error>
+  </mat-form-field>
+  <mat-checkbox formControlName="isTrending">Is trending</mat-checkbox>
+  <mat-form-field>
+    <input matInput placeholder="Description" formControlName="description">
+    <mat-error *ngIf="(linkForm.get('description').dirty || linkForm.get('description').touched) && linkForm.get('description').hasError('required')">
+      Description is required
+    </mat-error>
+    <mat-error *ngIf="(linkForm.get('description').dirty || linkForm.get('description').touched) && linkForm.get('description').hasError('notequals')">
+      {{ linkForm.get('description').getError('notequals').message }}
+    </mat-error>
+  </mat-form-field>
+  <br />
+
+  <div>
+    <button mat-button (click)="save.emit(linkForm.value)">Save</button>
+    <button mat-button (click)="cancel.emit()">Cancel</button>
+  </div>
+</form>

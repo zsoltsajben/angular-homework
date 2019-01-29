@@ -19,7 +19,7 @@ export class LinkFormComponent implements OnInit, OnChanges {
     title: new FormControl('', [Validators.required]),
     url: new FormControl('', [Validators.required]),
     isTrending: new FormControl(),
-    description: new FormControl('', [Validators.required, NotEqualsValidator])
+    description: new FormControl('', [Validators.required, NotEqualsValidator('title')])
   });
 
   constructor() { }
@@ -27,7 +27,7 @@ export class LinkFormComponent implements OnInit, OnChanges {
   ngOnInit() {
   }
 
-  ngOnChanges(){
+  ngOnChanges() {
     if (this.link) {
       this.linkForm.patchValue(this.link);
     }
